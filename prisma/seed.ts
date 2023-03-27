@@ -11,6 +11,7 @@ const getRandomTaskStatus = () => {
 };
 
 async function main() {
+  
   const user = await db.user.upsert({
     where: { email: "user@email.com" },
     update: {},
@@ -49,7 +50,6 @@ async function main() {
 
   console.log({ user, tasks });
 }
-
 main()
   .then(async () => {
     await db.$disconnect();
